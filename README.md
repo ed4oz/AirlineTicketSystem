@@ -3,10 +3,10 @@
 ## Project Name : 
 - Airline Ticket Booking System
 
-##Project Summary:
+## Project Summary:
 - The "Airline Ticket Booking System Backend Service Application" project addresses the needs of modern airline operations by providing a comprehensive backend solution. 
 
-##Requirements of Project
+## Requirements of Project
 
 - Streamlined Operations: The project aims to facilitate efficient airline management through functionalities like adding, searching, and defining airline companies, airports, and flight routes. This ensures smoother operations for both airlines and passengers.
 
