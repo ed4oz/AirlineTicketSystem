@@ -1,4 +1,4 @@
-package com.example.demo.entities;
+package com.example.AirlineTicketSystem.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ public class Ticket {
     private String ticketNumber;
     @ManyToOne
     @JoinColumn(name = "flight_id")
-    private Flight flight;
+
     private double price;
     private String passengerName;
     private String seatNumber;

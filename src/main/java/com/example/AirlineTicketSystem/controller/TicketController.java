@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.DTO.request.TicketRequestDTO;
+import com.example.demo.DTO.response.BuyTicketResponseDTO;
 import com.example.demo.DTO.response.TicketResponseDTO;
 import com.example.demo.service.TicketService;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class TicketController {
     }
 
     @PostMapping("/buyTicket/flightId={flightId}")
-    public TicketResponseDTO buyTicket(@RequestBody TicketRequestDTO request, @PathVariable long flightId) {
+    public BuyTicketResponseDTO buyTicket(@RequestBody TicketRequestDTO request, @PathVariable long flightId) {
         return ticketService.buyTicket(request, flightId);
     }
 

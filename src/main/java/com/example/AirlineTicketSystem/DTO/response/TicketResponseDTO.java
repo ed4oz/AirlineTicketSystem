@@ -16,5 +16,5 @@ public class TicketResponseDTO {
     private double price;
     private String passengerName;
     private String seatNumber;
-    private String cc;
+
 }

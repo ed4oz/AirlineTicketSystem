@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.DTO.request.TicketRequestDTO;
+import com.example.demo.DTO.response.BuyTicketResponseDTO;
 import com.example.demo.DTO.response.TicketResponseDTO;
 import com.example.demo.entities.Flight;
 import com.example.demo.entities.Ticket;
@@ -38,7 +39,7 @@ public class TicketService {
     }
 
     @Transactional
-    public TicketResponseDTO buyTicket(TicketRequestDTO request, long flightId) {
+    public BuyTicketResponseDTO buyTicket(TicketRequestDTO request, long flightId) {
         Flight flight = flightRepository.findById(flightId).orElseThrow(() -> new NotExistObjectException());
 
         if (ticketRepository.existsBySeatNumberAndFlightAndAvaliable(request.getSeatNumber(), flight, false)) {
@@ -54,7 +55,7 @@ public class TicketService {
         ticketRepository.save(ticket);
         String maskedCardNumber = maskCCNumber(request.getCc());
 
-        TicketResponseDTO response = mapper.map(ticket, TicketResponseDTO.class);
+        BuyTicketResponseDTO response = mapper.map(ticket, BuyTicketResponseDTO.class);
         response.setCc(maskedCardNumber);
 
         return response;

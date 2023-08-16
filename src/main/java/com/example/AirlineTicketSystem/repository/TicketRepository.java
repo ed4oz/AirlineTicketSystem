@@ -10,9 +10,6 @@ import java.util.List;
 @Repository
 public interface TicketRepository extends JpaRepository<Ticket,Long> {
     Ticket findByTicketNumber(String ticketNumber);
-
-    List<Ticket> findByFlight(Flight flight);
-
     boolean existsBySeatNumberAndFlightAndAvaliable(String seatNumber, Flight flight, boolean avaliable);
 
     boolean existsByTicketNumber(String ticketNumber);
